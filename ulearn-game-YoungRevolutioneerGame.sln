@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ulearn-game-YoungRevolutioneerGame", "ulearn-game-YoungRevolutioneerGame.csproj", "{C023FF39-F343-4F28-B90D-22BBA491B2A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C023FF39-F343-4F28-B90D-22BBA491B2A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C023FF39-F343-4F28-B90D-22BBA491B2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C023FF39-F343-4F28-B90D-22BBA491B2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C023FF39-F343-4F28-B90D-22BBA491B2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D15CC5C-222C-4210-9799-6FA9E4D194AA}
+	EndGlobalSection
+EndGlobal

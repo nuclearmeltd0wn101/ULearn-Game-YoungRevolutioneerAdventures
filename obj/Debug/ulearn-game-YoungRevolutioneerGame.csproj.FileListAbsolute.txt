@@ -1,0 +1,9 @@
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/bin/Debug/ulearn-game-YoungRevolutioneerGame.exe.config
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/bin/Debug/ulearn-game-YoungRevolutioneerGame.exe
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/bin/Debug/ulearn-game-YoungRevolutioneerGame.pdb
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn-game-YoungRevolutioneerGame.csprojAssemblyReference.cache
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn_game_YoungRevolutioneerGame.Properties.Resources.resources
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn-game-YoungRevolutioneerGame.csproj.GenerateResource.cache
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn-game-YoungRevolutioneerGame.csproj.CoreCompileInputs.cache
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn-game-YoungRevolutioneerGame.exe
+/home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn-game-YoungRevolutioneerGame.pdb
