@@ -1,7 +1,7 @@
 ﻿
 namespace ulearn_game_YoungRevolutioneerGame
 {
-    partial class Form1
+    partial class MainMenu
     {
         /// <summary>
         /// Обязательная переменная конструктора.

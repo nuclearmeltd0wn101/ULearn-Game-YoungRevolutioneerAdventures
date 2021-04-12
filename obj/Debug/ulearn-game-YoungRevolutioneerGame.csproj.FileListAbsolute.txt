@@ -7,3 +7,21 @@
 /home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn-game-YoungRevolutioneerGame.csproj.CoreCompileInputs.cache
 /home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn-game-YoungRevolutioneerGame.exe
 /home/nm101/RiderProjects/ulearn-game-YoungRevolutioneerGame/obj/Debug/ulearn-game-YoungRevolutioneerGame.pdb
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/bin/Debug/ulearn-game-YoungRevolutioneerGame.exe.config
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/bin/Debug/ulearn-game-YoungRevolutioneerGame.exe
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/bin/Debug/ulearn-game-YoungRevolutioneerGame.pdb
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/obj/Debug/ulearn-game-YoungRevolutioneerGame.csprojAssemblyReference.cache
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/obj/Debug/ulearn_game_YoungRevolutioneerGame.Properties.Resources.resources
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/obj/Debug/ulearn-game-YoungRevolutioneerGame.csproj.GenerateResource.cache
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/obj/Debug/ulearn-game-YoungRevolutioneerGame.csproj.CoreCompileInputs.cache
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/obj/Debug/ulearn-game-YoungRevolutioneerGame.exe
+/home/nm101/RiderProjects/ULearn-Game-YoungRevolutioneerAdventures/obj/Debug/ulearn-game-YoungRevolutioneerGame.pdb
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\bin\Debug\ulearn-game-YoungRevolutioneerGame.exe.config
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\bin\Debug\ulearn-game-YoungRevolutioneerGame.exe
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\bin\Debug\ulearn-game-YoungRevolutioneerGame.pdb
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\obj\Debug\ulearn-game-YoungRevolutioneerGame.csprojAssemblyReference.cache
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\obj\Debug\ulearn_game_YoungRevolutioneerGame.Properties.Resources.resources
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\obj\Debug\ulearn-game-YoungRevolutioneerGame.csproj.GenerateResource.cache
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\obj\Debug\ulearn-game-YoungRevolutioneerGame.csproj.CoreCompileInputs.cache
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\obj\Debug\ulearn-game-YoungRevolutioneerGame.exe
+D:\Users\nm101\Documents\VS source\ULearn-Game-YoungRevolutioneerAdventures\obj\Debug\ulearn-game-YoungRevolutioneerGame.pdb
