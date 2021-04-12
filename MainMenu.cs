@@ -64,4 +64,10 @@ namespace ulearn_game_YoungRevolutioneerGame
             BackgroundImage = default;
         }
     }
+
+    interface IScreen
+    {
+        void Draw(Form form);
+        void Clear(Form form);
+    }
 }
