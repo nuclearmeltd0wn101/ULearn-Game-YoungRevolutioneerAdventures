@@ -1,7 +1,7 @@
 ﻿
 namespace ulearn_game_YoungRevolutioneerGame
 {
-    partial class MainMenu
+    partial class GameScreen
     {
         /// <summary>
         /// Обязательная переменная конструктора.

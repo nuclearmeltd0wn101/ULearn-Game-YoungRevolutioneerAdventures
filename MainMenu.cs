@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
-    public partial class MainMenu : Form
+    public class MainMenu : IScreen
     {
-        private static FormClosingEventHandler CloseConfirmation
-            = new FormClosingEventHandler((o, e) => e.Cancel 
-                = DialogResult.No == MessageBox.Show("Текст", "Ладно", MessageBoxButtons.YesNo));
-
         private static Button newGameButton = new Button
         {
             Text = "Новая игра",
@@ -37,37 +27,25 @@ namespace ulearn_game_YoungRevolutioneerGame
             Location = new Point(671, 471)
         };
 
-        public MainMenu()
+        public void Draw(Form form)
         {
-            //InitializeComponent();
-            
-            Size = new Size(814, 600);
-            BackgroundImage = Properties.Resources.mainMenuBg;
-            Text = "Young Revolutioneer Game v. 1e-31 by two degenerates team, where only one is actually works";
+            form.BackgroundImage = Properties.Resources.mainMenuBg;
 
-            quitButton.Click += (o, e) => Close();
-            FormClosing += CloseConfirmation;
+            form.Controls.Add(newGameButton);
+            form.Controls.Add(aboutButton);
+            form.Controls.Add(quitButton);
 
-            Controls.Add(newGameButton);
-            Controls.Add(aboutButton);
-            Controls.Add(quitButton);
-
-            aboutButton.Click += (o, e) => DisposeMenu();
+            aboutButton.Click += (o, e) => Clear(form);
+            quitButton.Click += (o, e) => form.Close();
         }
-        public void DisposeMenu()
+
+        public void Clear(Form form)
         {
-            quitButton.Click -= (o, e) => Close();
-            FormClosing -= CloseConfirmation;
-            Controls.Remove(newGameButton);
-            Controls.Remove(aboutButton);
-            Controls.Remove(quitButton);
-            BackgroundImage = default;
+            quitButton.Click -= (o, e) => form.Close();
+            form.Controls.Remove(newGameButton);
+            form.Controls.Remove(aboutButton);
+            form.Controls.Remove(quitButton);
+            form.BackgroundImage = default;
         }
-    }
-
-    interface IScreen
-    {
-        void Draw(Form form);
-        void Clear(Form form);
     }
 }
