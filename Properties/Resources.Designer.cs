@@ -63,9 +63,59 @@ namespace ulearn_game_YoungRevolutioneerGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mainMenuBg {
+        internal static System.Drawing.Bitmap AboutButton {
             get {
-                object obj = ResourceManager.GetObject("mainMenuBg", resourceCulture);
+                object obj = ResourceManager.GetObject("AboutButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AboutScreenBg {
+            get {
+                object obj = ResourceManager.GetObject("AboutScreenBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BackButton {
+            get {
+                object obj = ResourceManager.GetObject("BackButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainMenuBg {
+            get {
+                object obj = ResourceManager.GetObject("MainMenuBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NewGameButton {
+            get {
+                object obj = ResourceManager.GetObject("NewGameButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuitButton {
+            get {
+                object obj = ResourceManager.GetObject("QuitButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +126,16 @@ namespace ulearn_game_YoungRevolutioneerGame.Properties {
         internal static string resources {
             get {
                 return ResourceManager.GetString("resources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectButton {
+            get {
+                object obj = ResourceManager.GetObject("SelectButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

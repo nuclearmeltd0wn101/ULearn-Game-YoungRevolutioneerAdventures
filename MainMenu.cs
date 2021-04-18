@@ -8,40 +8,54 @@ namespace ulearn_game_YoungRevolutioneerGame
     {
         private static Button newGameButton = new Button
         {
-            Text = "Новая игра",
-            Size = new Size(196, 40),
-            Location = new Point(473, 283)
+            Size = new Size(200, 40),
+            Location = new Point(473, 283),
+            Image = Properties.Resources.NewGameButton,
+            
         };
 
         private static Button aboutButton = new Button
         {
-            Text = "Об игре",
-            Size = new Size(196, 40),
-            Location = new Point(473, 364)
+            Size = new Size(200, 40),
+            Location = new Point(473, 364),
+            Image = Properties.Resources.AboutButton
+            
         };
 
         private static Button quitButton = new Button
         {
-            Text = "Вiйди отсюда, розбiйник",
-            Size = new Size(124, 34),
-            Location = new Point(671, 471)
+            Size = new Size(125, 30),
+            Location = new Point(650, 520),
+            Image = Properties.Resources.QuitButton
         };
+
+        public void Initialize(Form form)
+        {
+            foreach (var button in new[] { newGameButton, aboutButton, quitButton })
+                button.FlatAppearance.BorderSize = 0;
+
+            var aboutScreen = new AboutScreen(this);
+            aboutScreen.Initialize(form);
+
+            aboutButton.Click += (o, e) =>
+            {
+                Clear(form);
+                aboutScreen.Draw(form);    
+            };
+            quitButton.Click += (o, e) => form.Close();
+        }
 
         public void Draw(Form form)
         {
-            form.BackgroundImage = Properties.Resources.mainMenuBg;
+            form.BackgroundImage = Properties.Resources.MainMenuBg;
 
             form.Controls.Add(newGameButton);
             form.Controls.Add(aboutButton);
             form.Controls.Add(quitButton);
-
-            aboutButton.Click += (o, e) => Clear(form);
-            quitButton.Click += (o, e) => form.Close();
         }
 
         public void Clear(Form form)
         {
-            quitButton.Click -= (o, e) => form.Close();
             form.Controls.Remove(newGameButton);
             form.Controls.Remove(aboutButton);
             form.Controls.Remove(quitButton);

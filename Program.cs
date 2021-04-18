@@ -16,7 +16,9 @@ namespace ulearn_game_YoungRevolutioneerGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameScreen());
+
+            var mainMenu = new MainMenu();
+            Application.Run(new GameScreen(mainMenu));
         }
     }
 }
