@@ -14,6 +14,7 @@ namespace ulearn_game_YoungRevolutioneerGame
             FlatStyle = FlatStyle.Flat
     };
 
+        private Form form;
         private IScreen previousScreen;
 
         public AboutScreen(IScreen previousScreen)
@@ -24,20 +25,21 @@ namespace ulearn_game_YoungRevolutioneerGame
 
         public void Initialize(Form form)
         {
+            this.form = form;
             backButton.Click += (o, e) =>
             {
-                Clear(form);
-                previousScreen.Draw(form);
+                Clear();
+                previousScreen.Draw();
             };
         }
 
-        public void Draw(Form form)
+        public void Draw()
         {
             form.BackgroundImage = Properties.Resources.AboutScreenBg;
             form.Controls.Add(backButton);
         }
 
-        public void Clear(Form form)
+        public void Clear()
         {
             form.Controls.Remove(backButton);
             form.BackgroundImage = default;

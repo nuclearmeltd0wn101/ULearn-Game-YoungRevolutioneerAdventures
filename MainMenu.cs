@@ -26,28 +26,40 @@ namespace ulearn_game_YoungRevolutioneerGame
         private static Button quitButton = new Button
         {
             Size = new Size(125, 30),
-            Location = new Point(650, 520),
+            Location = new Point(654, 520),
             Image = Properties.Resources.QuitButton,
             FlatStyle = FlatStyle.Flat
         };
+
+        private Form form;
 
         public void Initialize(Form form)
         {
             foreach (var button in new[] { newGameButton, aboutButton, quitButton })
                 button.FlatAppearance.BorderSize = 0;
 
+            this.form = form;
+
             var aboutScreen = new AboutScreen(this);
             aboutScreen.Initialize(form);
 
             aboutButton.Click += (o, e) =>
             {
-                Clear(form);
-                aboutScreen.Draw(form);    
+                Clear();
+                aboutScreen.Draw();    
             };
             quitButton.Click += (o, e) => form.Close();
+
+            newGameButton.Click += (o, e) =>
+            {
+                var cs = new ComradesSelector();
+                cs.Initialize(form);
+                Clear();
+                cs.Draw();
+            };
         }
 
-        public void Draw(Form form)
+        public void Draw()
         {
             form.BackgroundImage = Properties.Resources.MainMenuBg;
 
@@ -56,7 +68,7 @@ namespace ulearn_game_YoungRevolutioneerGame
             form.Controls.Add(quitButton);
         }
 
-        public void Clear(Form form)
+        public void Clear()
         {
             form.Controls.Remove(newGameButton);
             form.Controls.Remove(aboutButton);

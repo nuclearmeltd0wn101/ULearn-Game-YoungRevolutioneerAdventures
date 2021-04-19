@@ -13,7 +13,7 @@ namespace ulearn_game_YoungRevolutioneerGame
             InitializeComponent();
 
             DoubleBuffered = true;
-            Size = new Size(800, 600);
+            Size = new Size(814, 600);
             Text = "Young Revolutioneer Game v. 1e-31 by two degenerates team, where only one is actually works";
             
             FormClosing += CloseConfirmation;
@@ -23,14 +23,14 @@ namespace ulearn_game_YoungRevolutioneerGame
             MaximizeBox = false;
 
             screen.Initialize(this);
-            screen.Draw(this);
+            screen.Draw();
         }
     }
 
     public interface IScreen
     {
         void Initialize(Form form);
-        void Draw(Form form);
-        void Clear(Form form);
+        void Draw();
+        void Clear();
     }
 }
