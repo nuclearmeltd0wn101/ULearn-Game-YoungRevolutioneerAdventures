@@ -10,13 +10,15 @@ namespace ulearn_game_YoungRevolutioneerGame
         {
             Size = new Size(145, 40),
             Location = new Point(650, 522),
-            Image = Properties.Resources.BackButton
-        };
+            Image = Properties.Resources.BackButton,
+            FlatStyle = FlatStyle.Flat
+    };
 
         private IScreen previousScreen;
 
         public AboutScreen(IScreen previousScreen)
         {
+            backButton.FlatAppearance.BorderSize = 0;
             this.previousScreen = previousScreen;
         }
 

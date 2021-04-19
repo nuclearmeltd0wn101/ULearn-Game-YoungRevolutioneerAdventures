@@ -11,22 +11,24 @@ namespace ulearn_game_YoungRevolutioneerGame
             Size = new Size(200, 40),
             Location = new Point(473, 283),
             Image = Properties.Resources.NewGameButton,
-            
+            FlatStyle = FlatStyle.Flat
         };
 
         private static Button aboutButton = new Button
         {
             Size = new Size(200, 40),
             Location = new Point(473, 364),
-            Image = Properties.Resources.AboutButton
-            
+            Image = Properties.Resources.AboutButton,
+            FlatStyle = FlatStyle.Flat
+
         };
 
         private static Button quitButton = new Button
         {
             Size = new Size(125, 30),
             Location = new Point(650, 520),
-            Image = Properties.Resources.QuitButton
+            Image = Properties.Resources.QuitButton,
+            FlatStyle = FlatStyle.Flat
         };
 
         public void Initialize(Form form)
