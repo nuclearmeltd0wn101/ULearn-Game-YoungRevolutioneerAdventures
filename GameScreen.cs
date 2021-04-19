@@ -14,7 +14,7 @@ namespace ulearn_game_YoungRevolutioneerGame
 
             DoubleBuffered = true;
             Size = new Size(814, 600);
-            Text = "Young Revolutioneer Game v. 1e-31 by two degenerates team, where only one is actually works";
+            Text = "Young Revolutioneer Game v. 1e-31 by TwOdEgEnErAtEsTeAm";
             
             FormClosing += CloseConfirmation;
 
