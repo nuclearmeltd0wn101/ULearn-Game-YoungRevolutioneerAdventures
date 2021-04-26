@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutScreen.cs" />
-    <Compile Include="ComradesSelector.cs" />
+    <Compile Include="ComradesSelectorModel.cs" />
+    <Compile Include="ComradesSelectorScreen.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="GameScreen.cs">
       <SubType>Form</SubType>

@@ -52,10 +52,10 @@ namespace ulearn_game_YoungRevolutioneerGame
 
             newGameButton.Click += (o, e) =>
             {
-                var cs = new ComradesSelector();
-                cs.Initialize(form);
+                var csScreen = new ComradesSelectorScreen();
+                csScreen.Initialize(form);
                 Clear();
-                cs.Draw();
+                csScreen.Draw();
             };
         }
 
