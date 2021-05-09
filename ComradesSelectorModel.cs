@@ -1,31 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
-    class ComradePerson
-    {
-        public string Name;
-        public string description;
-
-        public double ImposterousnessCoefficient;
-    }
-
     class ComradesSelectorModel
     {
-        public void Choose(int num)
+        private ComradesSelectorScreen view;
+        private CommanderPerson[] currentOptions;
+
+        public ComradesSelectorModel(ComradesSelectorScreen view)
         {
-            MessageBox.Show(num.ToString(), "Вы выбрали чела",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            this.view = view;
+
+            currentOptions = Commanders.ComradesCommanders
+                .Skip(Commanders.ComradesCommanders.Length - 3)
+                .ToArray();
+
+            view.LoadComradeDetails(currentOptions
+                .Select(x => x.SelectorViewDetailsImage)
+                .ToArray());
         }
 
-        public ComradePerson[] GetOptions()
+        public ComradeSelectorAction Choose(int num)
         {
-            throw new NotImplementedException();
+            MessageBox.Show(
+                "Вы выбрали в команду следующего человека:\n " 
+                + currentOptions[num].DisplayName, 
+                
+                "Вы выбрали чела",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            return ComradeSelectorAction.RefreshOptions;
         }
 
     }

@@ -60,18 +60,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources\CommanderPersons.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -82,18 +83,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Resources\SelectButton.jpg" />
-    <None Include="Properties\Resources\QuitButton.jpg" />
-    <None Include="Properties\Resources\NewGameButton.jpg" />
-    <None Include="Properties\Resources\AboutButton.jpg" />
-    <None Include="Properties\Resources\AboutScreenBg.jpg" />
-    <None Include="Properties\Resources\BackButton.jpg" />
-    <Content Include="Properties\Resources\ComradesSelectorBg.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Properties\Resources\MainMenuBg.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="Properties\Resources\BG\AboutScreenBg.jpg" />
+    <None Include="Properties\Resources\BG\ComradesSelectorBg.jpg" />
+    <None Include="Properties\Resources\BG\MainMenuBg.jpg" />
+    <None Include="Properties\Resources\Buttons\AboutButton.jpg" />
+    <None Include="Properties\Resources\Buttons\BackButton.jpg" />
+    <None Include="Properties\Resources\Buttons\NewGameButton.jpg" />
+    <None Include="Properties\Resources\Buttons\QuitButton.jpg" />
+    <None Include="Properties\Resources\Buttons\SelectButton.jpg" />
+    <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageMartynov.jpg" />
+    <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageSafarov.jpg" />
+    <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageSavinkov.jpg" />
+    <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageSukhanov.jpg" />
+    <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageZinovyev.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

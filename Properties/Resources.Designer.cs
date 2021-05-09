@@ -103,6 +103,56 @@ namespace ulearn_game_YoungRevolutioneerGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DetailsImageMartynov {
+            get {
+                object obj = ResourceManager.GetObject("DetailsImageMartynov", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DetailsImageSafarov {
+            get {
+                object obj = ResourceManager.GetObject("DetailsImageSafarov", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DetailsImageSavinkov {
+            get {
+                object obj = ResourceManager.GetObject("DetailsImageSavinkov", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DetailsImageSukhanov {
+            get {
+                object obj = ResourceManager.GetObject("DetailsImageSukhanov", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DetailsImageZinovyev {
+            get {
+                object obj = ResourceManager.GetObject("DetailsImageZinovyev", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MainMenuBg {
             get {
                 object obj = ResourceManager.GetObject("MainMenuBg", resourceCulture);
