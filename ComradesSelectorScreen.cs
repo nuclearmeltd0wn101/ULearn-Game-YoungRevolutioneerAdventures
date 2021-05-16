@@ -6,10 +6,10 @@ using System.Windows.Forms;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
-enum ComradeSelectorAction
+enum AfterPersonSelect
     {
-        RefreshOptions,
-        Clear
+        NextChoice,
+        Finish
     }
         
     public class ComradesSelectorScreen : IScreen
@@ -32,6 +32,7 @@ enum ComradeSelectorAction
         private Form form;
         Button[] selectButtons = new Button[ComradesPerScreenCount];
         PictureBox[] comradeDetails = new PictureBox[ComradesPerScreenCount];
+        private CommanderPerson[] currentOptions;
 
         public void Initialize(Form form)
         {
@@ -53,16 +54,31 @@ enum ComradeSelectorAction
                     Location = ComradeDetailsLocations[i]
                 };
                 selectButtons[i].FlatAppearance.BorderSize = 0;
-                selectButtons[i].Click += (o, e) => model.Choose(j);
+                selectButtons[i].Click += (o, e) =>
+                {
+                    if (model.Choose(currentOptions[j]) == AfterPersonSelect.Finish)
+                        Finish();
+                };
             }
 
             model = new ComradesSelectorModel(this);
         }
 
-        public void LoadComradeDetails(Image[] details)
+        private void Finish()
         {
+            var choices = model.GetChoices;
+            foreach (var e in choices)
+                MessageBox.Show("Вы выбрали в команду следующего человека:\n " + e.DisplayName, 
+                    "Итог", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Clear();
+        }
+
+        public void LoadCurrentOptions(CommanderPerson[] options)
+        {
+            currentOptions = options;
             for (var i = 0; i < ComradesPerScreenCount; i++)
-                comradeDetails[i].Image = details[i];
+                comradeDetails[i].Image = options[i].SelectorViewDetailsImage;
         }
 
         public void Draw()

@@ -72,7 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources\CommanderPersons.cs" />
+    <Compile Include="CommanderPersons.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -96,6 +96,9 @@
     <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageSavinkov.jpg" />
     <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageSukhanov.jpg" />
     <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageZinovyev.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageKaplan.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,39 +1,47 @@
 ﻿using System;
-using System.Drawing;
+using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
     class ComradesSelectorModel
     {
+        public CommanderPerson[] GetChoices => chosenPeople.ToArray();
+        
         private ComradesSelectorScreen view;
-        private CommanderPerson[] currentOptions;
+        private List<CommanderPerson> chosenPeople = new List<CommanderPerson>();
+        private CommanderPerson[] leftOptions;
 
         public ComradesSelectorModel(ComradesSelectorScreen view)
         {
             this.view = view;
+            var rand = new Random();
 
-            currentOptions = Commanders.ComradesCommanders
-                .Skip(Commanders.ComradesCommanders.Length - 3)
+            leftOptions = Commanders.ComradesCommanders.OrderBy(x => rand.Next())
                 .ToArray();
 
-            view.LoadComradeDetails(currentOptions
-                .Select(x => x.SelectorViewDetailsImage)
-                .ToArray());
+            NewChoice();
         }
 
-        public ComradeSelectorAction Choose(int num)
+        public AfterPersonSelect Choose(CommanderPerson option)
         {
-            MessageBox.Show(
-                "Вы выбрали в команду следующего человека:\n " 
-                + currentOptions[num].DisplayName, 
-                
-                "Вы выбрали чела",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            chosenPeople.Add(option);
 
-            return ComradeSelectorAction.RefreshOptions;
+            return NewChoice();
+        }
+
+        private AfterPersonSelect NewChoice()
+        {
+            var currentOptions = leftOptions.Take(3)
+                .ToArray();
+
+            leftOptions = leftOptions.Except(currentOptions).ToArray();
+
+            if (currentOptions.Length == 0)
+                return AfterPersonSelect.Finish;
+
+            view.LoadCurrentOptions(currentOptions);
+            return AfterPersonSelect.NextChoice;
         }
 
     }

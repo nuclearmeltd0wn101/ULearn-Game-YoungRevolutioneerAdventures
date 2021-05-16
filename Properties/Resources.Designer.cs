@@ -103,6 +103,16 @@ namespace ulearn_game_YoungRevolutioneerGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DetailsImageKaplan {
+            get {
+                object obj = ResourceManager.GetObject("DetailsImageKaplan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DetailsImageMartynov {
             get {
                 object obj = ResourceManager.GetObject("DetailsImageMartynov", resourceCulture);

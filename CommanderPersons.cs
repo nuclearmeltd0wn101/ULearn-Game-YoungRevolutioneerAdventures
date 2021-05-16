@@ -46,7 +46,15 @@ namespace ulearn_game_YoungRevolutioneerGame
                 DisplayName = "Г. Е. Зиновьев",
                 ImposterousnessCoefficient = 0.01,
                 SelectorViewDetailsImage = Properties.Resources.DetailsImageZinovyev
+            },
+
+            new CommanderPerson
+            {
+                DisplayName = "Ф. Е. Каплан",
+                ImposterousnessCoefficient = 0.99,
+                SelectorViewDetailsImage = Properties.Resources.DetailsImageKaplan
             }
+
         };
     }
 }
