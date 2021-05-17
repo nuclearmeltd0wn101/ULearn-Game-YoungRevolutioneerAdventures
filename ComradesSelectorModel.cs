@@ -23,25 +23,25 @@ namespace ulearn_game_YoungRevolutioneerGame
             NewChoice();
         }
 
-        public AfterPersonSelect Choose(CommanderPerson option)
+        public FinishChoices Choose(CommanderPerson option)
         {
             chosenPeople.Add(option);
 
             return NewChoice();
         }
 
-        private AfterPersonSelect NewChoice()
+        private FinishChoices NewChoice()
         {
             var currentOptions = leftOptions.Take(3)
                 .ToArray();
-
-            leftOptions = leftOptions.Except(currentOptions).ToArray();
+            leftOptions = leftOptions.Except(currentOptions)
+                .ToArray();
 
             if (currentOptions.Length == 0)
-                return AfterPersonSelect.Finish;
+                return FinishChoices.Yes;
 
             view.LoadCurrentOptions(currentOptions);
-            return AfterPersonSelect.NextChoice;
+            return FinishChoices.No;
         }
 
     }

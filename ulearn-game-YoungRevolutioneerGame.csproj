@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutScreen.cs" />
+    <Compile Include="BattleScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ComradesSelectorModel.cs" />
     <Compile Include="ComradesSelectorScreen.cs" />
     <Compile Include="MainMenu.cs" />
@@ -99,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Resources\ComradeDetailsImages\DetailsImageKaplan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BG\BattleBg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

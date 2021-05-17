@@ -14,7 +14,7 @@ namespace ulearn_game_YoungRevolutioneerGame
 
             DoubleBuffered = true;
             Size = new Size(814, 600);
-            Text = "Young Revolutioneer Game v. 1e-31 by TwOdEgEnErAtEsTeAm";
+            Text = "Young Revolutioneer Game v. 1e-2 by TwOdEgEnErAtEsTeAm";
             
             FormClosing += CloseConfirmation;
 

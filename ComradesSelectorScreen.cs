@@ -6,11 +6,11 @@ using System.Windows.Forms;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
-enum AfterPersonSelect
-    {
-        NextChoice,
-        Finish
-    }
+    enum FinishChoices
+        {
+            Yes,
+            No
+        }
         
     public class ComradesSelectorScreen : IScreen
     {
@@ -56,22 +56,18 @@ enum AfterPersonSelect
                 selectButtons[i].FlatAppearance.BorderSize = 0;
                 selectButtons[i].Click += (o, e) =>
                 {
-                    if (model.Choose(currentOptions[j]) == AfterPersonSelect.Finish)
-                        Finish();
+                    if (model.Choose(currentOptions[j]) == FinishChoices.No)
+                        return;
+
+                    var gameScreen = new BattleScreen(model.GetChoices);
+                    gameScreen.Initialize(form);
+
+                    Clear();
+                    gameScreen.Draw();
                 };
             }
 
             model = new ComradesSelectorModel(this);
-        }
-
-        private void Finish()
-        {
-            var choices = model.GetChoices;
-            foreach (var e in choices)
-                MessageBox.Show("Вы выбрали в команду следующего человека:\n " + e.DisplayName, 
-                    "Итог", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            Clear();
         }
 
         public void LoadCurrentOptions(CommanderPerson[] options)
@@ -98,6 +94,5 @@ enum AfterPersonSelect
             foreach (var pb in comradeDetails)
                 form.Controls.Remove(pb);
         }
-
     }
 }
