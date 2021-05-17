@@ -11,7 +11,14 @@ namespace ulearn_game_YoungRevolutioneerGame
 
     public static class Commanders
     {
-        public static readonly CommanderPerson[] ComradesCommanders = new[]
+        public static readonly CommanderPerson MainProtag = new CommanderPerson
+        {
+            DisplayName = "В. И. Ленин",
+            ImposterousnessCoefficient = 0,
+            SelectorViewDetailsImage = null
+        };
+
+        public static readonly CommanderPerson[] ComradesAllCommanders = new[]
         {
             new CommanderPerson
             {
@@ -54,7 +61,11 @@ namespace ulearn_game_YoungRevolutioneerGame
                 ImposterousnessCoefficient = 0.99,
                 SelectorViewDetailsImage = Properties.Resources.DetailsImageKaplan
             }
+        };
 
+        public static CommanderPerson[] EnemiesAllCommanders = new[]
+        {
+            default(CommanderPerson)
         };
     }
 }

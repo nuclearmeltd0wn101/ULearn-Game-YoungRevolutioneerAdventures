@@ -50,6 +50,8 @@
     <Compile Include="BattleScreen.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BattleModel.cs" />
+    <Compile Include="Spells.cs" />
     <Compile Include="ComradesSelectorModel.cs" />
     <Compile Include="ComradesSelectorScreen.cs" />
     <Compile Include="MainMenu.cs" />

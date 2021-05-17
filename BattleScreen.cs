@@ -5,15 +5,20 @@ using System.Windows.Forms;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
-    class BattleScreen : IScreen
+    public class BattleScreen : IScreen
     {
         private Form form;
+        private BattleModel model;
 
         public BattleScreen(CommanderPerson[] chosenComrades)
         {
+            model = new BattleModel(this, chosenComrades);
+
             foreach (var e in chosenComrades)
-                MessageBox.Show("Вы выбрали в команду следующего человека:\n "+ e.DisplayName,
+                MessageBox.Show("Вы выбрали в команду следующего человека:\n " + e.DisplayName,
                     "Результат выбора", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            model.StartGame();
         }
 
         public void Initialize(Form form)

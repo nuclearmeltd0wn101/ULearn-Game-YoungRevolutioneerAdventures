@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
-    class ComradesSelectorModel
+    public class ComradesSelectorModel
     {
         public CommanderPerson[] GetChoices => chosenPeople.ToArray();
         
@@ -17,20 +17,19 @@ namespace ulearn_game_YoungRevolutioneerGame
             this.view = view;
             var rand = new Random();
 
-            leftOptions = Commanders.ComradesCommanders.OrderBy(x => rand.Next())
+            leftOptions = Commanders.ComradesAllCommanders.OrderBy(x => rand.Next())
                 .ToArray();
 
-            NewChoice();
+            StartSelection();
         }
 
-        public FinishChoices Choose(CommanderPerson option)
+        public FinishSelection Choose(CommanderPerson option)
         {
             chosenPeople.Add(option);
-
-            return NewChoice();
+            return StartSelection();
         }
 
-        private FinishChoices NewChoice()
+        private FinishSelection StartSelection()
         {
             var currentOptions = leftOptions.Take(3)
                 .ToArray();
@@ -38,11 +37,10 @@ namespace ulearn_game_YoungRevolutioneerGame
                 .ToArray();
 
             if (currentOptions.Length == 0)
-                return FinishChoices.Yes;
+                return FinishSelection.Yes;
 
             view.LoadCurrentOptions(currentOptions);
-            return FinishChoices.No;
+            return FinishSelection.No;
         }
-
     }
 }

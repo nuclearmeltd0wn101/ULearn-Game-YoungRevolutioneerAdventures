@@ -6,11 +6,11 @@ using System.Windows.Forms;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
-    enum FinishChoices
-        {
-            Yes,
-            No
-        }
+    public enum FinishSelection
+    {
+        Yes,
+        No
+    }
         
     public class ComradesSelectorScreen : IScreen
     {
@@ -56,14 +56,10 @@ namespace ulearn_game_YoungRevolutioneerGame
                 selectButtons[i].FlatAppearance.BorderSize = 0;
                 selectButtons[i].Click += (o, e) =>
                 {
-                    if (model.Choose(currentOptions[j]) == FinishChoices.No)
+                    if (model.Choose(currentOptions[j]) == FinishSelection.No)
                         return;
 
-                    var gameScreen = new BattleScreen(model.GetChoices);
-                    gameScreen.Initialize(form);
-
-                    Clear();
-                    gameScreen.Draw();
+                    StartBattle();
                 };
             }
 
@@ -93,6 +89,15 @@ namespace ulearn_game_YoungRevolutioneerGame
                 form.Controls.Remove(button);
             foreach (var pb in comradeDetails)
                 form.Controls.Remove(pb);
+        }
+
+        private void StartBattle()
+        {
+            var gameScreen = new BattleScreen(model.GetChoices);
+            gameScreen.Initialize(form);
+
+            Clear();
+            gameScreen.Draw();
         }
     }
 }
