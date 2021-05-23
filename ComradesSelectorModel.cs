@@ -17,7 +17,7 @@ namespace ulearn_game_YoungRevolutioneerGame
             this.view = view;
             var rand = new Random();
 
-            leftOptions = Commanders.ComradesAllCommanders.OrderBy(x => rand.Next())
+            leftOptions = Commanders.AllCommanders.OrderBy(x => rand.Next())
                 .ToArray();
 
             StartSelection();
