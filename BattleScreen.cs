@@ -9,12 +9,14 @@ namespace ulearn_game_YoungRevolutioneerGame
 {
     public class BattleScreen : IScreen
     {
+        const int SpellsCount = 2;
         private Form form;
         private BattleModel model;
 
         private Label alliesStatusLabel = new Label();
         private Label foesStatusLabel = new Label();
         private Label currentMoveLabel = new Label();
+        private Button[] spellSelectButtons = new Button[SpellsCount];
 
         public BattleScreen(CommanderPerson[] chosenComrades)
         {
@@ -24,7 +26,16 @@ namespace ulearn_game_YoungRevolutioneerGame
         public void Initialize(Form form)
         {
             this.form = form;
-            model.StartGame();
+
+            for (var i = 0; i < SpellsCount; i++)
+            {
+                var j = i;
+                spellSelectButtons[j] = new Button();
+                spellSelectButtons[j].Size = new Size(200, 30);
+                spellSelectButtons[j].Location = new Point(300, 200 + j * 50);
+                spellSelectButtons[j].Click += (o, e)
+                    => model.Step(model.ActiveCommander.Spells[j]);
+            }
 
             alliesStatusLabel.Location = new Point(15, 130);
             foesStatusLabel.Location = new Point(605, 130);
@@ -42,17 +53,35 @@ namespace ulearn_game_YoungRevolutioneerGame
             currentMoveLabel.BackColor = Color.Black;
             currentMoveLabel.ForeColor = Color.White;
             currentMoveLabel.Font = new Font("Comic Sans", 14);
+
+            model.StartGame();
+        }
+
+        public void GameOver(bool protagWin)
+        {
+
+            MessageBox.Show(protagWin ? "Победа" : "Поражение",
+            "Игра окончена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
+            Application.Exit();
         }
 
         public void SelectSpell()
         {
             var commander = model.ActiveCommander;
             currentMoveLabel.Text = $"Сейчас ходит {commander.DisplayName}";
+            for (var i = 0; i < SpellsCount; i++)
+                spellSelectButtons[i].Text = commander.Spells[i].Name;
         }
 
-        public void CastedSpellInfo(CommanderPerson commander, Spell spell)
+        public void CastedSpellInfo(CommanderPerson commander, Spell spell, SpellOutcome[] outcomes)
         {
-            MessageBox.Show($"{commander.DisplayName} использовал навык {spell.Name}",
+            var sb = new StringBuilder();
+            sb.Append($"{commander.DisplayName} использовал навык {spell.Name}\nПоследствия:\n");
+            foreach (var e in outcomes)
+                sb.Append($"{e.Type.ToString()} {e.Value}\n");
+
+            MessageBox.Show(sb.ToString(),
             "Был использован навык", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -64,10 +93,11 @@ namespace ulearn_game_YoungRevolutioneerGame
                 model.FoesPeople, model.FoesMood, model.FoesCommanders);
         }
 
-
         public void Draw()
         {
             form.BackgroundImage = Properties.Resources.BattleBg;
+            foreach (var e in spellSelectButtons)
+                form.Controls.Add(e);
             foreach (var e in new[] { alliesStatusLabel, foesStatusLabel, currentMoveLabel })
                 form.Controls.Add(e);
         }
@@ -75,6 +105,10 @@ namespace ulearn_game_YoungRevolutioneerGame
         public void Clear()
         {
             form.BackgroundImage = default;
+            foreach (var e in new[] { alliesStatusLabel, foesStatusLabel, currentMoveLabel })
+                form.Controls.Remove(e);
+            foreach (var e in spellSelectButtons)
+                form.Controls.Remove(e);
         }
 
         private string BuildStatusText(string title, int peopleCount, int moodPercentage, CommanderPerson[] commanders)

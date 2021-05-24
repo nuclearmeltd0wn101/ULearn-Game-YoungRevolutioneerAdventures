@@ -5,7 +5,7 @@ namespace ulearn_game_YoungRevolutioneerGame
 {
     public class BattleModel
     {
-        const int DefaultTotalPeople = 123400;
+        const int DefaultTotalPeople = 12000;
         const int DefaultMoodPercentage = 50;
 
         public CommanderPerson[] AlliesCommanders => alliesCommanders.ToArray();
@@ -51,63 +51,80 @@ namespace ulearn_game_YoungRevolutioneerGame
 
         public void Step(Spell spell)
         {
-            screen.CastedSpellInfo(activeCommander, spell);
-            foreach (var e in Spells.EvaluateOutcome(spell))
+            var outcomes = Spells.EvaluateOutcome(spell);
+            foreach (var e in outcomes)
             {
                 switch (e.Type)
                 {
                     case Spells.OutcomeType.AlliesMood:
-                        if (commanderCount % 3 == 0)
+                        if (commanderCount / 3 == 0)
                             alliesMood += e.Value;
                         else
                             foesMood += e.Value;
                         break;
 
                     case Spells.OutcomeType.FoesMood:
-                        if (commanderCount % 3 == 1)
+                        if (commanderCount / 3 == 1)
                             alliesMood += e.Value;
                         else
                             foesMood += e.Value;
+                        
                         break;
 
                     case Spells.OutcomeType.MurderAllies:
-                        if (commanderCount % 3 == 0)
-                            alliesPeople -= e.Value;
+                        if (commanderCount / 3 == 0)
+                            alliesPeople -= e.Value * foesMood;
                         else
-                            foesPeople -= e.Value;
+                            foesPeople -= e.Value * alliesMood;
                         break;
 
                     case Spells.OutcomeType.MurderFoes:
-                        if (commanderCount % 3 == 1)
-                            alliesPeople -= e.Value;
+                        if (commanderCount / 3 == 1)
+                            alliesPeople -= e.Value * foesMood;
                         else
-                            foesPeople -= e.Value;
+                            foesPeople -= e.Value * alliesMood;
+                        break;
+
+                    case Spells.OutcomeType.Poaching:
+                        if ((commanderCount / 3 == 1) ^ (e.Value < 0))
+                            e.Value *= -foesMood;
+                        else
+                            e.Value *= alliesMood;
+
+                        alliesPeople += e.Value;
+                        foesPeople -= e.Value;
                         break;
 
                     default:
                         throw new ArgumentOutOfRangeException();
                 }  
             }
+            alliesMood = Math.Max(0, Math.Min(alliesMood, 100));
+            foesMood = Math.Max(0, Math.Min(foesMood, 100));
+            alliesPeople = Math.Max(alliesPeople, 0);
+            foesPeople = Math.Max(foesPeople, 0);
 
             screen.UpdateTeamsStatus();
-            commanderCount++;
-            commanderCount %= 6;
-            activeCommander = (commanderCount % 3 == 0)
-                ? alliesCommanders[commanderCount % 3]
-                : foesCommanders[commanderCount % 3];
+            screen.CastedSpellInfo(activeCommander, spell, outcomes);
+            if (foesPeople == 0 || alliesPeople == 0)
+            {
+                screen.GameOver(foesPeople == 0);
+                return;
+            }
+            
+            
+            commanderCount = (commanderCount + 1) % 6;
+            activeCommander = (commanderCount / 3 == 0)
+                ? alliesCommanders[commanderCount]
+                : foesCommanders[commanderCount - 3];
 
-            if (commanderCount % 3 == 0)
+            if (commanderCount / 3 == 0)
                 screen.SelectSpell();
             else
-                AIChooseFoeSpell();
+                Step(AIChooseFoeSpell(activeCommander));
         }
 
-        private void AIChooseFoeSpell()
-        {
-            var spell = activeCommander.Spells.OrderBy(x => random.Next()).First(); // placeholder
-
-            screen.CastedSpellInfo(activeCommander, spell);
-            Step(spell);
-        }
+        private Spell AIChooseFoeSpell(CommanderPerson activeCommander)
+            => activeCommander.Spells.OrderBy(x => random.Next()).First(); // placeholder
     }
 }

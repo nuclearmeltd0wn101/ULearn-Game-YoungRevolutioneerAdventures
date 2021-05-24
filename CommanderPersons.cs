@@ -14,6 +14,7 @@ namespace ulearn_game_YoungRevolutioneerGame
         public static readonly CommanderPerson MainProtag = new CommanderPerson
         {
             DisplayName = "В. И. Ленин",
+            SelectorViewDetailsImage = null,
             Spells = new[] {
                 new Spell
                 {
@@ -21,7 +22,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                     PossibleOutcomes = new [] {
                         new OutcomeFork
                         {
-                            PrimaryProbabilityPercentage = 90,
+                            PrimaryProbabilityPercentage = 70,
                             Primary = new[]
                             {
                                 new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 1, ValueMax = 10 },
@@ -39,7 +40,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                     PossibleOutcomes = new [] {
                         new OutcomeFork
                         {
-                            PrimaryProbabilityPercentage = 90,
+                            PrimaryProbabilityPercentage = 60,
                             Primary = new[]
                             {
                                 new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
@@ -50,8 +51,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                         }
                     }
                 },
-            },
-            SelectorViewDetailsImage = null
+            }
         };
 
         public static readonly CommanderPerson[] AllCommanders = new[]
@@ -59,43 +59,259 @@ namespace ulearn_game_YoungRevolutioneerGame
             new CommanderPerson
             {
                 DisplayName = "А. С. Мартынов",
-                Spells = null,
-                SelectorViewDetailsImage = Properties.Resources.DetailsImageMartynov
+                SelectorViewDetailsImage = Properties.Resources.DetailsImageMartynov,
+                Spells = new[]
+                {
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    },
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    }
+                }
             },
 
             new CommanderPerson
             {
                 DisplayName = "Г. И. Сафаров",
-                Spells = null,
-                SelectorViewDetailsImage = Properties.Resources.DetailsImageSafarov
+                SelectorViewDetailsImage = Properties.Resources.DetailsImageSafarov,
+                Spells = new[]
+                {
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    },
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    }
+                }
+
             },
 
             new CommanderPerson
             {
                 DisplayName = "Б. В. Савинков",
-                Spells = null,
-                SelectorViewDetailsImage = Properties.Resources.DetailsImageSavinkov
+                SelectorViewDetailsImage = Properties.Resources.DetailsImageSavinkov,
+                Spells = new[]
+                {
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    },
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    }
+                }
             },
 
             new CommanderPerson
             {
                 DisplayName = "Н. Н. Суханов",
-                Spells = null,
-                SelectorViewDetailsImage = Properties.Resources.DetailsImageSukhanov
+                SelectorViewDetailsImage = Properties.Resources.DetailsImageSukhanov,
+                Spells = new[]
+                {
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    },
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    }
+                }
             },
 
             new CommanderPerson
             {
                 DisplayName = "Г. Е. Зиновьев",
-                Spells = null,
-                SelectorViewDetailsImage = Properties.Resources.DetailsImageZinovyev
+                SelectorViewDetailsImage = Properties.Resources.DetailsImageZinovyev,
+                Spells = new[]
+                {
+                    new Spell
+                    {
+                        Name = "Призыв на мытенг",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 55,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 2, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 10, ValueMax = 40 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 5, ValueMin = 0 } }
+                            }
+                        }
+                    },
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    }
+                }
             },
 
             new CommanderPerson
             {
                 DisplayName = "Ф. Е. Каплан",
-                Spells = null,
-                SelectorViewDetailsImage = Properties.Resources.DetailsImageKaplan
+                SelectorViewDetailsImage = Properties.Resources.DetailsImageKaplan,
+                Spells = new[]
+                {
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    },
+                    new Spell
+                    {
+                        Name = "Бахнуть побоище",
+                        PossibleOutcomes = new [] {
+                            new OutcomeFork
+                            {
+                                PrimaryProbabilityPercentage = 60,
+                                Primary = new[]
+                                {
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderFoes, ValueMin = 5, ValueMax = 20 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMin = 0, ValueMax = 5 },
+                                    new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
+                                },
+                                Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.MurderAllies, ValueMax = 10, ValueMin = 1 } }
+                            }
+                        }
+                    }
+                }
             }
         };
     }
