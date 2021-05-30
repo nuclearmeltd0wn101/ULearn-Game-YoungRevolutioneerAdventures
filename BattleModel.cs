@@ -7,7 +7,7 @@ namespace ulearn_game_YoungRevolutioneerGame
     public class BattleModel
     {
         public const int DefaultTotalPeople = 16000;
-        public const double AlliesRatioCoefficient = 0.3;
+        public const double AlliesRatioCoefficient = 0.02;
         public const int DefaultMoodPercentage = 50;
 
         public CommanderPerson[] AlliesCommanders => alliesCommanders.ToArray();
