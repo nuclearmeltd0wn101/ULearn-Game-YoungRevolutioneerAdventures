@@ -29,11 +29,12 @@ namespace ulearn_game_YoungRevolutioneerGame
         private int foesMood = DefaultMoodPercentage;
         private CommanderPerson activeCommander;
         private int commanderCount = 0;
-        private IRandom rand = new NormalRandom();
+        private IRandom rand;
 
-        public BattleModel(IBattleScreen screen, CommanderPerson[] chosenComrades)
+        public BattleModel(IBattleScreen screen, CommanderPerson[] chosenComrades, IRandom random)
         {
             this.screen = screen;
+            rand = random;
 
             alliesCommanders = new[] { Commanders.MainProtag }.Concat(chosenComrades)
                 .OrderBy(x => rand.Next())

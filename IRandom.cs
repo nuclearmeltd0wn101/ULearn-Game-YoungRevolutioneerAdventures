@@ -25,7 +25,7 @@ namespace ulearn_game_YoungRevolutioneerGame
     public class ReplayingRandom : IRandom
     {
         private List<int> replayValues;
-        public ReplayingRandom(List<int> replayValues) => this.replayValues = replayValues;
+        public ReplayingRandom(List<int> replayValues) => this.replayValues = replayValues.ToList();
 
         public int Next()
         {

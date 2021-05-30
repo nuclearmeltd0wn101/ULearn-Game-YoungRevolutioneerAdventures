@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
@@ -54,7 +53,7 @@ namespace ulearn_game_YoungRevolutioneerGame
 
         public BattleScreen(CommanderPerson[] chosenComrades)
         {
-            model = new BattleModel(this, chosenComrades);
+            model = new BattleModel(this, chosenComrades, new NormalRandom());
         }
 
         public void Initialize(Form form)
