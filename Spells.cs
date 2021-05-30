@@ -37,18 +37,18 @@ namespace ulearn_game_YoungRevolutioneerGame
 
         public static Spell LeninSpeech = new Spell
         {
-            Name = "Воодушевляющая речь",
+            Name = "Речь на броневике",
             PossibleOutcomes = new[]
             {
                 new OutcomeFork
                 {
-                    PrimaryProbabilityPercentage = 70,
+                    PrimaryProbabilityPercentage = 56,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 30 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 3, ValueMax = 25 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 1, ValueMax = 12 },
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMax = 2, ValueMin = -5 } }
+                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = -15, ValueMax = -5 } }
                 }
             }
         };
@@ -63,13 +63,13 @@ namespace ulearn_game_YoungRevolutioneerGame
                     PrimaryProbabilityPercentage = 50,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 3, ValueMax = 35 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 3, ValueMax = 20 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 5, ValueMax = 15 },
                     },
                     Secondary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 15, ValueMax = 40 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 0, ValueMax = 3 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = -15, ValueMax = 30 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 0, ValueMax = 15 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -6, ValueMax = -3 },
                     }
                 }
@@ -86,7 +86,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                     PrimaryProbabilityPercentage = 80,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 40 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 30 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 3, ValueMax = 9 },
                     },
                     Secondary = new[]
@@ -105,10 +105,10 @@ namespace ulearn_game_YoungRevolutioneerGame
             {
                 new OutcomeFork
                 {
-                    PrimaryProbabilityPercentage = 70,
+                    PrimaryProbabilityPercentage = 80,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 25 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 20 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 0, ValueMax = 2 },
                     },
                     Secondary = new[]

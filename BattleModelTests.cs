@@ -1,10 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using NUnit.Framework;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
+    public class HollowBattleScreen : IBattleScreen
+    {
+        public void UpdateMoveLabel()
+        {
+        }
+
+        public void SelectSpell()
+        {
+        }
+
+        public void CastedSpellInfo(CommanderPerson commander, Spell spell, SpellOutcome[] outcomes)
+        {
+        }
+
+        public void UpdateTeamsStatus()
+        {
+        }
+
+        public void Initialize(Form form)
+        {
+        }
+
+        public void Draw()
+        {
+        }
+
+        public void Clear()
+        {
+        }
+    }
+
     [TestFixture]
     class BattleModelTests
     {

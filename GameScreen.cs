@@ -12,7 +12,7 @@ namespace ulearn_game_YoungRevolutioneerGame
 
             DoubleBuffered = true;
             Size = new Size(814, 600);
-            Text = "Young Revolutioneer Game v0.4 by TwoDegeneratesTeam, where only one actually works";
+            Text = "Shin Megami Tensei VI: Young Revolutioneer Adventure v0.9 by TwoDegeneratesTeam, where only does 99% of work";
             
             // add disablable game close confirmation
             FormClosing += new FormClosingEventHandler((o, e) => e.Cancel = CloseConfirmation 

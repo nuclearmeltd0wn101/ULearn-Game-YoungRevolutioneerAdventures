@@ -40,7 +40,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                 SelectorViewDetailsImage = Properties.Resources.DetailsImageSafarov,
                 Spells = new[]
                 {
-                    Spells.Diversion,
+                    Spells.MakeRally,
                     Spells.Bloodoath
                 }
 
