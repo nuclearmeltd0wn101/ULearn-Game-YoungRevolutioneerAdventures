@@ -20,7 +20,7 @@ namespace ulearn_game_YoungRevolutioneerGame
         public int AlliesMood => alliesMood;
         public int FoesMood => foesMood;
 
-        private BattleScreen screen;
+        private IBattleScreen screen;
         private CommanderPerson[] alliesCommanders;
         private CommanderPerson[] foesCommanders;
         private int alliesPeople = (int)Math.Ceiling(DefaultTotalPeople * AlliesRatioCoefficient);
@@ -31,7 +31,7 @@ namespace ulearn_game_YoungRevolutioneerGame
         private int commanderCount = 0;
         private IRandom rand = new NormalRandom();
 
-        public BattleModel(BattleScreen screen, CommanderPerson[] chosenComrades)
+        public BattleModel(IBattleScreen screen, CommanderPerson[] chosenComrades)
         {
             this.screen = screen;
 
@@ -92,7 +92,9 @@ namespace ulearn_game_YoungRevolutioneerGame
                         break;
 
                     case Spells.OutcomeType.Poaching:
-                        if ((commanderCount / 3 == 1) ^ (e.Value < 0)) // if foe ~ negative poaching -> inverse people transmission
+                        // foe or negative poaching needs people transmission inverse,
+                        // both occasions at the same time needs nothing
+                        if ((commanderCount / 3 == 1) ^ (e.Value < 0))
                             e.Value *= (int)Math.Ceiling(foesMood * -0.4);
                         else
                             e.Value *= (int)Math.Ceiling(alliesMood * 0.4);

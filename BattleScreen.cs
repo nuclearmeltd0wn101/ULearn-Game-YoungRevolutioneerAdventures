@@ -30,7 +30,15 @@ namespace ulearn_game_YoungRevolutioneerGame
         };
     }
 
-    public class BattleScreen : IScreen
+    public interface IBattleScreen : IScreen
+    {
+        public void UpdateMoveLabel();
+        public void SelectSpell();
+        public void CastedSpellInfo(CommanderPerson commander, Spell spell, SpellOutcome[] outcomes);
+        public void UpdateTeamsStatus();
+    }
+
+    public class BattleScreen : IBattleScreen
     {
         const int SpellsCount = 2;
         private Form form;

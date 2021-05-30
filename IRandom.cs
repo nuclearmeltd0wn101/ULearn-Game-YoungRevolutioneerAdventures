@@ -22,30 +22,6 @@ namespace ulearn_game_YoungRevolutioneerGame
         public int Next(int minValue, int maxValue) => rand.Next(minValue, maxValue);
     }
 
-    public class MITMRandom : IRandom
-    {
-        private List<int> values = new List<int>();
-        private Random rand = new Random();
-
-        public List<int> GetReplay => values.ToList();
-
-        public int Next()
-        {
-            var value = rand.Next();
-            values.Add(value);
-            return value;
-        }
-
-        public int Next(int maxValue) => Next(0, maxValue);
-
-        public int Next(int minValue, int maxValue)
-        {
-            var value = rand.Next(minValue, maxValue);
-            values.Add(value);
-            return value;
-        }
-    }
-
     public class ReplayingRandom : IRandom
     {
         private List<int> replayValues;
