@@ -21,7 +21,6 @@ namespace ulearn_game_YoungRevolutioneerGame
         public int FoesMood => foesMood;
 
         private BattleScreen screen;
-        private Random random;
         private CommanderPerson[] alliesCommanders;
         private CommanderPerson[] foesCommanders;
         private int alliesPeople = (int)Math.Ceiling(DefaultTotalPeople * AlliesRatioCoefficient);
@@ -30,20 +29,20 @@ namespace ulearn_game_YoungRevolutioneerGame
         private int foesMood = DefaultMoodPercentage;
         private CommanderPerson activeCommander;
         private int commanderCount = 0;
+        private IRandom rand = new NormalRandom();
 
         public BattleModel(BattleScreen screen, CommanderPerson[] chosenComrades)
         {
             this.screen = screen;
-            random = new Random();
 
             alliesCommanders = new[] { Commanders.MainProtag }.Concat(chosenComrades)
-                .OrderBy(x => random.Next())
+                .OrderBy(x => rand.Next())
                 .ToArray();
         }
         
         public void StartGame()
         {
-            foesCommanders = Commanders.AllCommanders.Except(alliesCommanders).OrderBy(x => random.Next())
+            foesCommanders = Commanders.AllCommanders.Except(alliesCommanders).OrderBy(x => rand.Next())
                 .Take(3)
                 .ToArray();
 
@@ -55,7 +54,7 @@ namespace ulearn_game_YoungRevolutioneerGame
 
         public void Step(Spell spell)
         {
-            var outcomesNotModeled = Spells.EvaluateOutcome(spell);
+            var outcomesNotModeled = Spells.EvaluateOutcome(rand, spell);
             var outcomes = new List<SpellOutcome>();
             var alliesMoodAlteration = 0;
             var foesMoodAlteration = 0;
@@ -135,6 +134,6 @@ namespace ulearn_game_YoungRevolutioneerGame
 
         // здесь мог быть нормальный алгоритм ИИ, но что-то пошло не так
         private Spell AIChooseFoeSpell(CommanderPerson activeCommander)
-            => activeCommander.Spells.OrderBy(x => random.Next()).First();
+            => activeCommander.Spells.OrderBy(x => rand.Next()).First();
     }
 }

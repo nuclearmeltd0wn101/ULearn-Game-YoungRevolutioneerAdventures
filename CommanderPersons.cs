@@ -86,7 +86,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                 Spells = new[]
                 {
                     Spells.Diversion,
-                    Spells.MoneyPoaching
+                    Spells.Bloodoath
                 }
             }
         };

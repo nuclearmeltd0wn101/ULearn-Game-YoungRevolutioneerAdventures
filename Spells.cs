@@ -15,14 +15,11 @@ namespace ulearn_game_YoungRevolutioneerGame
             AlliesDeath
         }
 
-        public static SpellOutcome[] EvaluateOutcome(Spell spell)
-        {
-            var rand = new Random();
-            return spell.PossibleOutcomes
+        public static SpellOutcome[] EvaluateOutcome(IRandom rand, Spell spell)
+        => spell.PossibleOutcomes
                 .SelectMany(x => rand.Next(100) <= x.PrimaryProbabilityPercentage ? x.Primary : x.Secondary)
                 .Select(x => new SpellOutcome { Type = x.Type, Value = x.ValueMin + rand.Next(x.ValueMax - x.ValueMin) })
                 .ToArray();
-        }
 
         public static string OutcomeStringFormat(SpellOutcome outcome)
             => (outcome.Type) switch
@@ -148,14 +145,14 @@ namespace ulearn_game_YoungRevolutioneerGame
             {
                 new OutcomeFork
                 {
-                    PrimaryProbabilityPercentage = 40,
+                    PrimaryProbabilityPercentage = 30,
                     Primary = new[]
                     {
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 2, ValueMax = 25 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -8, ValueMax = -2 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -4, ValueMax = -2 },
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 2, ValueMax = 8 } }
+                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 4, ValueMax = 16 } }
                 }
             }
         };
@@ -167,14 +164,14 @@ namespace ulearn_game_YoungRevolutioneerGame
             {
                 new OutcomeFork
                 {
-                    PrimaryProbabilityPercentage = 40,
+                    PrimaryProbabilityPercentage = 20,
                     Primary = new[]
                     {
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 5, ValueMax = 15 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -20, ValueMax = -5 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -4, ValueMax = -2 }
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMax = 30, ValueMin = 5 } }
+                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 5, ValueMax = 30 } }
                 }
             }
         };
