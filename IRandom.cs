@@ -45,4 +45,21 @@ namespace ulearn_game_YoungRevolutioneerGame
             return value;
         }
     }
+
+    public class ReplayingRandom : IRandom
+    {
+        private List<int> replayValues;
+        public ReplayingRandom(List<int> replayValues) => this.replayValues = replayValues;
+
+        public int Next()
+        {
+            var value = replayValues[0];
+            replayValues.RemoveAt(0);
+            return value;
+        }
+
+        public int Next(int maxValue) => Next();
+
+        public int Next(int minValue, int maxValue) => Next();
+    }
 }

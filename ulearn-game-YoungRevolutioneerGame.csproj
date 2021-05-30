@@ -61,6 +61,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BattleModel.cs" />
+    <Compile Include="SpellsTests.cs" />
     <Compile Include="IRandom.cs" />
     <Compile Include="Spells.cs" />
     <Compile Include="ComradesSelectorModel.cs" />
