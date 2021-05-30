@@ -42,10 +42,10 @@ namespace ulearn_game_YoungRevolutioneerGame
             {
                 new OutcomeFork
                 {
-                    PrimaryProbabilityPercentage = 90,
+                    PrimaryProbabilityPercentage = 70,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 40 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 30 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 1, ValueMax = 12 },
                     },
                     Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMax = 2, ValueMin = -5 } }
