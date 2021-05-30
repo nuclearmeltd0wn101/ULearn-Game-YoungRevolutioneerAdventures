@@ -13,7 +13,7 @@ namespace ulearn_game_YoungRevolutioneerGame
         public void TestTeamsFormation()
         {
             var rand = new Random();
-            var replayValues = new List<int> { 2, 1, 0 };
+            var replayValues = new List<int> { 0, 2, 1 };
             var comrades = Commanders.AllCommanders
                 .OrderBy(x => rand.Next())
                 .Take(2)
@@ -25,7 +25,7 @@ namespace ulearn_game_YoungRevolutioneerGame
             var model = new BattleModel(null, comrades, new ReplayingRandom(replayValues));
 
             for (var i = 0; i < comradesWithLenin.Length; i++)
-                Assert.AreEqual(comradesWithLenin[i], model.AlliesCommanders[replayValues[i]]);
+                Assert.AreEqual(comradesWithLenin[i], model.AlliesCommanders[2 - i]);
         }
     }
 }
