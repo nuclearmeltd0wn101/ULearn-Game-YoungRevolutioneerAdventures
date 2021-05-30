@@ -9,7 +9,7 @@ namespace ulearn_game_YoungRevolutioneerGame
         private static Button backButton = new Button
         {
             Size = new Size(145, 40),
-            Location = new Point(644, 512),
+            Location = new Point(652, 522),
             Image = Properties.Resources.BackButton,
             FlatStyle = FlatStyle.Flat
         };

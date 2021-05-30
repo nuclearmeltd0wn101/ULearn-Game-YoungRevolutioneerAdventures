@@ -17,7 +17,7 @@ namespace ulearn_game_YoungRevolutioneerGame
             SelectorViewDetailsImage = null,
             Spells = new[] {
                 Spells.LeninSpeech,
-                Spells.Bloodoath
+                Spells.PublishMagazine
             }
         };
 
@@ -29,7 +29,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                 SelectorViewDetailsImage = Properties.Resources.DetailsImageMartynov,
                 Spells = new[]
                 {
-                    Spells.Bloodoath,
+                    Spells.PublishMagazine,
                     Spells.Bloodoath
                 }
             },
@@ -40,7 +40,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                 SelectorViewDetailsImage = Properties.Resources.DetailsImageSafarov,
                 Spells = new[]
                 {
-                    Spells.Bloodoath,
+                    Spells.Diversion,
                     Spells.Bloodoath
                 }
 
@@ -63,7 +63,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                 SelectorViewDetailsImage = Properties.Resources.DetailsImageSukhanov,
                 Spells = new[]
                 {
-                    Spells.Bloodoath,
+                    Spells.MoneyPoaching,
                     Spells.Bloodoath
                 }
             },
@@ -75,7 +75,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                 Spells = new[]
                 {
                     Spells.MakeRally,
-                    Spells.Bloodoath
+                    Spells.PublishMagazine
                 }
             },
 
@@ -86,7 +86,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                 Spells = new[]
                 {
                     Spells.Diversion,
-                    Spells.TerrAct
+                    Spells.MoneyPoaching
                 }
             }
         };

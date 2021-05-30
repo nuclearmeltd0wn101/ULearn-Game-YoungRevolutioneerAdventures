@@ -48,66 +48,10 @@ namespace ulearn_game_YoungRevolutioneerGame
                     PrimaryProbabilityPercentage = 90,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 4, ValueMax = 16 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 5, ValueMax = 25 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -16, ValueMax = -4 }
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 70 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 1, ValueMax = 16 },
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMax = 5, ValueMin = -10 } }
-                }
-            }
-        };
-
-        public static Spell Bloodoath = new Spell
-        {
-            Name = "Бахнуть побоище",
-            PossibleOutcomes = new[] 
-            {
-                new OutcomeFork
-                {
-                    PrimaryProbabilityPercentage = 80,
-                    Primary = new[]
-                    {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 5, ValueMax = 20 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 0, ValueMax = 5 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -5, ValueMax = 5 },
-                    },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMax = 10, ValueMin = 5 } }
-                }
-            }
-        };
-
-        public static Spell Diversion = new Spell
-        {
-            Name = "Устроить диверсию",
-            PossibleOutcomes = new[]
-            {
-                new OutcomeFork
-                {
-                    PrimaryProbabilityPercentage = 70,
-                    Primary = new[]
-                    {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 10, ValueMax = 40 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -20, ValueMax = -10 },
-                    },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMax = 5, ValueMin = 1 } }
-                }
-            }
-        };
-
-        public static Spell TerrAct = new Spell
-        {
-            Name = "Устроить терракт",
-            PossibleOutcomes = new[]
-            {
-                new OutcomeFork
-                {
-                    PrimaryProbabilityPercentage = 60,
-                    Primary = new[]
-                    {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 20, ValueMax = 50 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -30, ValueMax = -5 },
-                    },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMax = 60, ValueMin = 5 } }
+                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMax = 2, ValueMin = -5 } }
                 }
             }
         };
@@ -119,13 +63,118 @@ namespace ulearn_game_YoungRevolutioneerGame
             {
                 new OutcomeFork
                 {
+                    PrimaryProbabilityPercentage = 50,
+                    Primary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 3, ValueMax = 35 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 5, ValueMax = 15 },
+                    },
+                    Secondary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 15, ValueMax = 40 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 0, ValueMax = 3 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -6, ValueMax = -3 },
+                    }
+                }
+            }
+        };
+
+        public static Spell PublishMagazine = new Spell
+        {
+            Name = "Выпустить газету",
+            PossibleOutcomes = new[]
+            {
+                new OutcomeFork
+                {
+                    PrimaryProbabilityPercentage = 80,
+                    Primary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 40 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 3, ValueMax = 9 },
+                    },
+                    Secondary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 5, ValueMax = 20 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 0, ValueMax = 1 },
+                    }
+                }
+            }
+        };
+
+        public static Spell MoneyPoaching = new Spell
+        {
+            Name = "Раздача на спавне",
+            PossibleOutcomes = new[]
+            {
+                new OutcomeFork
+                {
+                    PrimaryProbabilityPercentage = 70,
+                    Primary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 10, ValueMax = 25 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 0, ValueMax = 2 },
+                    },
+                    Secondary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = -35, ValueMax = 5 },
+                    }
+                }
+            }
+        };
+
+        public static Spell Bloodoath = new Spell
+        {
+            Name = "Стачка",
+            PossibleOutcomes = new[] 
+            {
+                new OutcomeFork
+                {
                     PrimaryProbabilityPercentage = 60,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 2, ValueMax = 8 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 5, ValueMax = 15 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 4, ValueMax = 15 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 0, ValueMax = 12 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -8, ValueMax = 2 },
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMax = 5, ValueMin = 0 } }
+                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 7, ValueMax = 20 } }
+                }
+            }
+        };
+
+        public static Spell Diversion = new Spell
+        {
+            Name = "Диверсия",
+            PossibleOutcomes = new[]
+            {
+                new OutcomeFork
+                {
+                    PrimaryProbabilityPercentage = 40,
+                    Primary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 2, ValueMax = 25 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -8, ValueMax = -2 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -4, ValueMax = -2 },
+                    },
+                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 2, ValueMax = 8 } }
+                }
+            }
+        };
+
+        public static Spell TerrAct = new Spell
+        {
+            Name = "Терроризм",
+            PossibleOutcomes = new[]
+            {
+                new OutcomeFork
+                {
+                    PrimaryProbabilityPercentage = 40,
+                    Primary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 5, ValueMax = 15 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -20, ValueMax = -5 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -4, ValueMax = -2 }
+                    },
+                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMax = 30, ValueMin = 5 } }
                 }
             }
         };

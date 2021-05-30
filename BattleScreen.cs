@@ -82,7 +82,6 @@ namespace ulearn_game_YoungRevolutioneerGame
                 e.Parent = foesOnMap;
             }
             
-
             alliesStatusLabel.Location = new Point(5, 360);
             foesStatusLabel.Location = new Point(635, 360);
 
@@ -109,7 +108,7 @@ namespace ulearn_game_YoungRevolutioneerGame
         public void CastedSpellInfo(CommanderPerson commander, Spell spell, SpellOutcome[] outcomes)
         {
             var sb = new StringBuilder();
-            sb.Append($"{commander.DisplayName} использовал(а) навык {spell.Name}\n\nПоследствия:\n");
+            sb.Append($"{commander.DisplayName} использовал(а) навык {spell.Name}\n\nПоследствия относительно своего формирования:\n");
             foreach (var e in outcomes)
                 sb.Append($"  {Spells.OutcomeStringFormat(e)}\n");
 
