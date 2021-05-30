@@ -124,6 +124,21 @@
   <data name="AboutScreenBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\BG\AboutScreenBg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AlliesUpTo100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\AlliesUpTo100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlliesUpTo25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\AlliesUpTo25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlliesUpTo50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\AlliesUpTo50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlliesUpTo75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\AlliesUpTo75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlliesWin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\AlliesWin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BackButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Buttons\BackButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +165,21 @@
   </data>
   <data name="DetailsImageZinovyev" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\ComradeDetailsImages\DetailsImageZinovyev.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FoesUpTo100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\FoesUpTo100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FoesUpTo25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\FoesUpTo25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FoesUpTo50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\FoesUpTo50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FoesUpTo75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\FoesUpTo75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FoesWin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BattleUI\FoesWin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainMenuBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\BG\MainMenuBg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

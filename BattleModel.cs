@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ulearn_game_YoungRevolutioneerGame
 {
     public class BattleModel
     {
-        const int DefaultTotalPeople = 12000;
-        const int DefaultMoodPercentage = 50;
+        public const int DefaultTotalPeople = 12000;
+        public const int DefaultMoodPercentage = 50;
 
         public CommanderPerson[] AlliesCommanders => alliesCommanders.ToArray();
         public CommanderPerson[] FoesCommanders => foesCommanders.ToArray();
@@ -14,6 +15,7 @@ namespace ulearn_game_YoungRevolutioneerGame
 
         public int AlliesPeople => alliesPeople;
         public int FoesPeople => foesPeople;
+        public int TotalPeople => alliesPeople + foesPeople;
         public int AlliesMood => alliesMood;
         public int FoesMood => foesMood;
 
@@ -46,13 +48,15 @@ namespace ulearn_game_YoungRevolutioneerGame
 
             activeCommander = alliesCommanders[0];
             screen.UpdateTeamsStatus();
+            screen.UpdateMoveLabel();
             screen.SelectSpell();
         }
 
         public void Step(Spell spell)
         {
-            var outcomes = Spells.EvaluateOutcome(spell);
-            foreach (var e in outcomes)
+            var outcomesNotModeled = Spells.EvaluateOutcome(spell);
+            var outcomes = new List<SpellOutcome>();
+            foreach (var e in outcomesNotModeled)
             {
                 switch (e.Type)
                 {
@@ -71,18 +75,18 @@ namespace ulearn_game_YoungRevolutioneerGame
                         
                         break;
 
-                    case Spells.OutcomeType.MurderAllies:
+                    case Spells.OutcomeType.AlliesDeath:
                         if (commanderCount / 3 == 0)
-                            alliesPeople -= e.Value * foesMood;
+                            alliesPeople -= e.Value *= foesMood;
                         else
-                            foesPeople -= e.Value * alliesMood;
+                            foesPeople -= e.Value *= alliesMood;
                         break;
 
-                    case Spells.OutcomeType.MurderFoes:
+                    case Spells.OutcomeType.FoesDeath:
                         if (commanderCount / 3 == 1)
-                            alliesPeople -= e.Value * foesMood;
+                            alliesPeople -= e.Value *= foesMood;
                         else
-                            foesPeople -= e.Value * alliesMood;
+                            foesPeople -= e.Value *= alliesMood;
                         break;
 
                     case Spells.OutcomeType.Poaching:
@@ -93,30 +97,32 @@ namespace ulearn_game_YoungRevolutioneerGame
 
                         alliesPeople += e.Value;
                         foesPeople -= e.Value;
+                        e.Value = Math.Abs(e.Value);
                         break;
 
                     default:
                         throw new ArgumentOutOfRangeException();
-                }  
+                }
+                outcomes.Add(new SpellOutcome { Type = e.Type, Value = e.Value });
             }
+
             alliesMood = Math.Max(0, Math.Min(alliesMood, 100));
             foesMood = Math.Max(0, Math.Min(foesMood, 100));
             alliesPeople = Math.Max(alliesPeople, 0);
             foesPeople = Math.Max(foesPeople, 0);
 
+            screen.CastedSpellInfo(activeCommander, spell, outcomes.ToArray());
             screen.UpdateTeamsStatus();
-            screen.CastedSpellInfo(activeCommander, spell, outcomes);
-            if (foesPeople == 0 || alliesPeople == 0)
-            {
-                screen.GameOver(foesPeople == 0);
+
+            if (alliesPeople * foesPeople == 0)
                 return;
-            }
-            
-            
+
             commanderCount = (commanderCount + 1) % 6;
             activeCommander = (commanderCount / 3 == 0)
                 ? alliesCommanders[commanderCount]
                 : foesCommanders[commanderCount - 3];
+
+            screen.UpdateMoveLabel();
 
             if (commanderCount / 3 == 0)
                 screen.SelectSpell();
@@ -124,7 +130,8 @@ namespace ulearn_game_YoungRevolutioneerGame
                 Step(AIChooseFoeSpell(activeCommander));
         }
 
+        // здесь мог быть нормальный алгоритм ИИ, но что-то пошло не так
         private Spell AIChooseFoeSpell(CommanderPerson activeCommander)
-            => activeCommander.Spells.OrderBy(x => random.Next()).First(); // placeholder
+            => activeCommander.Spells.OrderBy(x => random.Next()).First();
     }
 }

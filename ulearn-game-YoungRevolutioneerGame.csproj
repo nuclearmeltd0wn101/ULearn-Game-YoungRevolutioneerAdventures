@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+   <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -107,6 +110,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Resources\BG\BattleBg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\AlliesUpTo25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\AlliesUpTo50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\AlliesUpTo75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\AlliesUpTo100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\AlliesWin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\FoesUpTo25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\FoesUpTo50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\FoesUpTo75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\FoesUpTo100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\BattleUI\FoesWin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

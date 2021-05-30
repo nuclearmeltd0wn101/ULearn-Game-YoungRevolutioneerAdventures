@@ -83,6 +83,56 @@ namespace ulearn_game_YoungRevolutioneerGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AlliesUpTo100 {
+            get {
+                object obj = ResourceManager.GetObject("AlliesUpTo100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlliesUpTo25 {
+            get {
+                object obj = ResourceManager.GetObject("AlliesUpTo25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlliesUpTo50 {
+            get {
+                object obj = ResourceManager.GetObject("AlliesUpTo50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlliesUpTo75 {
+            get {
+                object obj = ResourceManager.GetObject("AlliesUpTo75", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlliesWin {
+            get {
+                object obj = ResourceManager.GetObject("AlliesWin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BackButton {
             get {
                 object obj = ResourceManager.GetObject("BackButton", resourceCulture);
@@ -166,6 +216,56 @@ namespace ulearn_game_YoungRevolutioneerGame.Properties {
         internal static System.Drawing.Bitmap DetailsImageZinovyev {
             get {
                 object obj = ResourceManager.GetObject("DetailsImageZinovyev", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FoesUpTo100 {
+            get {
+                object obj = ResourceManager.GetObject("FoesUpTo100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FoesUpTo25 {
+            get {
+                object obj = ResourceManager.GetObject("FoesUpTo25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FoesUpTo50 {
+            get {
+                object obj = ResourceManager.GetObject("FoesUpTo50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FoesUpTo75 {
+            get {
+                object obj = ResourceManager.GetObject("FoesUpTo75", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FoesWin {
+            get {
+                object obj = ResourceManager.GetObject("FoesWin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -5,18 +5,18 @@ namespace ulearn_game_YoungRevolutioneerGame
 {
     public partial class GameScreen : Form
     {
-        private static FormClosingEventHandler CloseConfirmation
-            = new FormClosingEventHandler((o, e) => e.Cancel 
-                = DialogResult.No == MessageBox.Show("Текст", "Ладно", MessageBoxButtons.YesNo));
+        public static bool CloseConfirmation = true;
         public GameScreen(IScreen screen)
         {
             InitializeComponent();
 
             DoubleBuffered = true;
             Size = new Size(814, 600);
-            Text = "Young Revolutioneer Game v0.2 by TwOdEgEnErAtEsTeAm, where only one actually works";
+            Text = "Young Revolutioneer Game v0.4 by TwoDegeneratesTeam, where only one actually works";
             
-            FormClosing += CloseConfirmation;
+            // add disablable game close confirmation
+            FormClosing += new FormClosingEventHandler((o, e) => e.Cancel = CloseConfirmation 
+                && DialogResult.No == MessageBox.Show("Текст (Выйти?)", "Ладно", MessageBoxButtons.YesNo));
 
             // lock screen size
             FormBorderStyle = FormBorderStyle.FixedDialog;
