@@ -84,13 +84,13 @@ namespace ulearn_game_YoungRevolutioneerGame
             {
                 e.BackColor = Color.Transparent;
                 e.ForeColor = Color.White;
-                e.Size = new Size(160, 165);
+                e.Size = new Size(180, 180);
                 e.Font = new Font("Comic Sans", 12);
                 e.Parent = foesOnMap;
             }
             
-            alliesStatusLabel.Location = new Point(5, 360);
-            foesStatusLabel.Location = new Point(635, 360);
+            alliesStatusLabel.Location = new Point(5, 350);
+            foesStatusLabel.Location = new Point(620, 350);
 
             currentMoveLabel.Location = new Point(5, 535);
             currentMoveLabel.Size = new Size(380, 20);

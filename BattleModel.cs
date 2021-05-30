@@ -6,7 +6,7 @@ namespace ulearn_game_YoungRevolutioneerGame
 {
     public class BattleModel
     {
-        public const int DefaultTotalPeople = 16000;
+        public const int DefaultTotalPeople = 20000;
         public const double AlliesRatioCoefficient = 0.02;
         public const int DefaultMoodPercentage = 50;
 
