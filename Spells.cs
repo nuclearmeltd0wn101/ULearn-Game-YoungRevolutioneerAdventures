@@ -28,7 +28,9 @@ namespace ulearn_game_YoungRevolutioneerGame
                     + $" настроя союзников на {Math.Abs(outcome.Value)}%",
                 OutcomeType.FoesMood => (outcome.Value >= 0 ? "Подъем" : "Упадок")
                     + $" настроя врагов на {Math.Abs(outcome.Value)}%",
-                OutcomeType.Poaching => $"Переманено на свою сторону {outcome.Value} чел.",
+                OutcomeType.Poaching => outcome.Value >= 0
+                    ? $"Переманено на свою сторону {Math.Abs(outcome.Value)} чел."
+                    : $"Сбежало на сторону противника {Math.Abs(outcome.Value)} чел.",
                 OutcomeType.FoesDeath => $"Смерть {outcome.Value} врагов",
                 OutcomeType.AlliesDeath => $"Смерть {outcome.Value} союзников",
                 _ => throw new NotSupportedException()
@@ -45,10 +47,10 @@ namespace ulearn_game_YoungRevolutioneerGame
                     PrimaryProbabilityPercentage = 56,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 3, ValueMax = 25 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 1, ValueMax = 12 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = 5, ValueMax = 25 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = 1, ValueMax = 5 },
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = -15, ValueMax = -5 } }
+                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = -5, ValueMax = 5 } }
                 }
             }
         };
@@ -113,7 +115,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                     },
                     Secondary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = -35, ValueMax = 5 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.Poaching, ValueMin = -10, ValueMax = 5 },
                     }
                 }
             }
@@ -129,11 +131,16 @@ namespace ulearn_game_YoungRevolutioneerGame
                     PrimaryProbabilityPercentage = 60,
                     Primary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 4, ValueMax = 15 },
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 0, ValueMax = 12 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 4, ValueMax = 8 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 0, ValueMax = 4 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -8, ValueMax = 2 },
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 7, ValueMax = 20 } }
+                    Secondary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 0, ValueMax = 8 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 4, ValueMax = 8 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -8, ValueMax = -4 }
+                    }
                 }
             }
         };
@@ -152,7 +159,11 @@ namespace ulearn_game_YoungRevolutioneerGame
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -8, ValueMax = -2 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -4, ValueMax = -2 },
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 4, ValueMax = 16 } }
+                    Secondary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 4, ValueMax = 16 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 2, ValueMax = 4 }
+                    }
                 }
             }
         };
@@ -164,14 +175,18 @@ namespace ulearn_game_YoungRevolutioneerGame
             {
                 new OutcomeFork
                 {
-                    PrimaryProbabilityPercentage = 20,
+                    PrimaryProbabilityPercentage = 40,
                     Primary = new[]
                     {
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 5, ValueMax = 15 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesMood, ValueMin = -20, ValueMax = -5 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -4, ValueMax = -2 }
                     },
-                    Secondary = new[] { new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 5, ValueMax = 30 } }
+                    Secondary = new[]
+                    {
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 3, ValueMax = 5 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 4, ValueMax = 8 }
+                    }
                 }
             }
         };
