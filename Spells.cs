@@ -137,7 +137,7 @@ namespace ulearn_game_YoungRevolutioneerGame
                     },
                     Secondary = new[]
                     {
-                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 0, ValueMax = 8 },
+                        new SpellPossibleOutcome { Type = Spells.OutcomeType.FoesDeath, ValueMin = 0, ValueMax = 4 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesDeath, ValueMin = 4, ValueMax = 8 },
                         new SpellPossibleOutcome { Type = Spells.OutcomeType.AlliesMood, ValueMin = -8, ValueMax = -4 }
                     }
